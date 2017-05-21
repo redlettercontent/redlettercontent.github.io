@@ -1,0 +1,629 @@
+* {
+  padding: 0;
+  margin: 0;
+  -webkit-box-sizing: border-box;
+  -moz-box-sizing: border-box;
+  box-sizing: border-box;
+}
+
+html {
+  height: 100%;
+}
+
+body {
+  font-family: Tahoma, Geneva, sans-serif;
+  font-size: 10px;
+  -webkit-font-smoothing: antialiased;
+  -webkit-text-size-adjust: none;
+  background-color: #36653f;
+  height: 100%;
+}
+
+@media only screen and (min-width: 150px) and (max-width: 600px) {
+  body {
+    font-size: 14px;
+  }
+}
+
+p {
+  margin-bottom: 1em;
+}
+
+.resetfloat {
+  clear: both;
+}
+
+.set-width {
+  width: 950px;
+  margin: 0 auto;
+  padding-left: 10px;
+  padding-right: 10px;
+}
+
+@media only screen and (min-width: 150px) and (max-width: 600px) {
+  .set-width {
+    width: auto;
+  }
+}
+
+#intro-fullheight {
+  min-height: 100%;
+  height: 100%;
+}
+
+header#main-header {
+  min-height: 200px;
+  width: auto;
+  background-color: #333333;
+  position: relative;
+  color: white;
+  font-size: 2em;
+}
+
+header#main-header .logo {
+  position: relative;
+  height: 160px;
+  width: 125px;
+  float: left;
+  top: 20px;
+  margin-left: 10px;
+}
+
+@media only screen and (min-width: 150px) and (max-width: 600px) {
+  header#main-header .logo {
+    float: none;
+    display: block;
+    height: 135px;
+  }
+}
+
+header#main-header nav {
+  float: right;
+}
+
+@media only screen and (min-width: 150px) and (max-width: 600px) {
+  header#main-header nav {
+    float: none;
+    display: block;
+  }
+}
+
+header#main-header nav ul {
+  position: relative;
+  list-style-type: none;
+  margin: 0 0;
+}
+
+header#main-header nav ul li {
+  display: inline;
+  margin: 0;
+}
+
+@media only screen and (min-width: 150px) and (max-width: 600px) {
+  header#main-header nav ul li {
+    display: inline-block;
+    /* width: 22%; */
+    padding: 0px;
+  }
+}
+
+header#main-header nav ul li a {
+  display: inline-block;
+  color: #aaaaaa;
+  text-decoration: none;
+  font-family: "exobold", Arial;
+  font-size: .75em;
+  height: 120px;
+  margin-right: 10px;
+  margin-left: 20px;
+  margin-top: 90px;
+  padding-top: 40px;
+  background: center bottom url(../images/link_hover_arrow_up.png) no-repeat;
+  -webkit-transition-property: all;
+  -moz-transition-property: all;
+  -o-transition-property: all;
+  transition-property: all;
+  -webkit-transition-duration: 0.15s;
+  -moz-transition-duration: 0.15s;
+  -o-transition-duration: 0.15s;
+  transition-duration: 0.15s;
+}
+
+@media only screen and (min-width: 150px) and (max-width: 600px) {
+  header#main-header nav ul li a {
+    background: none;
+    padding-top: 0px;
+    margin-left: 20px;
+    height: auto;
+  }
+}
+
+header#main-header nav ul li a:hover, header#main-header nav ul li a.active {
+  color: #fff;
+  height: 110px;
+}
+
+@media only screen and (min-width: 150px) and (max-width: 600px) {
+  header#main-header nav ul li a:hover, header#main-header nav ul li a.active {
+    height: auto;
+  }
+}
+
+section {
+  width: 850px;
+  height: 100%;
+  min-height: 460px;
+  margin: 0 auto;
+  padding: 140px 0px 150px 150px;
+  box-sizing: border-box;
+  color: white;
+  font-size: 2em;
+  /* SUB-PAGES */
+}
+
+@media only screen and (min-width: 150px) and (max-width: 600px) {
+  section {
+    width: 100%;
+    height: auto;
+    padding: 10px;
+  }
+}
+
+section h2 {
+  font-size: 2.0em;
+  font-weight: 400;
+  line-height: 50px;
+  margin-left: -150px;
+  font-family: "texgyrepagellaregular", Arial;
+  color: white;
+}
+
+@media only screen and (min-width: 150px) and (max-width: 600px) {
+  section h2 {
+    line-height: normal;
+    padding-bottom: 0;
+    line-height: normal;
+  }
+}
+
+section a:link, section :visited {
+  color: #aaaaaa;
+  text-decoration: none;
+  -webkit-transition-property: all;
+  -moz-transition-property: all;
+  -o-transition-property: all;
+  transition-property: all;
+  -webkit-transition-duration: 0.15s;
+  -moz-transition-duration: 0.15s;
+  -o-transition-duration: 0.15s;
+  transition-duration: 0.15s;
+}
+
+section a:link:hover, section a:link :active, section :visited:hover, section :visited :active {
+  color: white;
+  text-decoration: underline;
+}
+
+section .tagline {
+  font-family: "texgyrepagellaregular", Arial;
+  text-transform: uppercase;
+  font-size: 1.25em;
+  margin-top: 40px;
+}
+
+@media only screen and (min-width: 150px) and (max-width: 600px) {
+  section .tagline {
+    margin-top: 25px;
+  }
+}
+
+section header {
+  font-size: 3em;
+  font-weight: 400;
+  line-height: 50px;
+  padding-bottom: 30px;
+  font-family: "texgyrepagellaregular", Arial;
+}
+
+@media only screen and (min-width: 150px) and (max-width: 600px) {
+  section header {
+    line-height: normal;
+    padding-bottom: 0;
+    line-height: normal;
+  }
+}
+
+section .bio {
+  margin-top: 50px;
+  padding-top: 50px;
+  padding-left: 110px;
+  border-top: 1px dashed #333333;
+  /* BIOS */
+}
+
+section .bio.sheryl {
+  background: 0 60px url(../images/sheryl.png) no-repeat;
+}
+
+section .bio p {
+  margin-top: 0px;
+}
+
+section .bio header {
+  font-size: 1.25em;
+}
+
+section .bio header span {
+  font-weight: bolder;
+}
+
+section ul {
+  list-style-type: none;
+}
+
+section#main {
+  background: 0 140px url(../images/bg_bigsquare_quotes.png) no-repeat;
+  display: block;
+  height: auto;
+}
+
+@media only screen and (min-width: 150px) and (max-width: 600px) {
+  section#main {
+    background: none;
+  }
+}
+
+section#project-management {
+  background: 0 140px url(../images/bg_bigsquare_project-management.png) no-repeat;
+  padding-top: 20px;
+}
+
+@media only screen and (min-width: 150px) and (max-width: 600px) {
+  section#project-management {
+    background: none;
+  }
+}
+
+section#print-and-digital {
+  background: 0 140px url(../images/bg_bigsquare_print-and-digital.png) no-repeat;
+  padding-top: 20px;
+}
+
+@media only screen and (min-width: 150px) and (max-width: 600px) {
+  section#print-and-digital {
+    background: none;
+  }
+}
+
+section#copyediting {
+  background: 0 140px url(../images/bg_bigsquare_copyediting.png) no-repeat;
+  padding-top: 20px;
+}
+
+@media only screen and (min-width: 150px) and (max-width: 600px) {
+  section#copyediting {
+    background: none;
+  }
+}
+
+section#proposal-development {
+  background: 0 140px url(../images/bg_bigsquare_proposal-development.png) no-repeat;
+  padding-top: 20px;
+}
+
+@media only screen and (min-width: 150px) and (max-width: 600px) {
+  section#proposal-development {
+    background: none;
+  }
+}
+
+section#ghostwriting {
+  background: 0 140px url(../images/bg_bigsquare_ghostwriting.png) no-repeat;
+  padding-top: 20px;
+}
+
+@media only screen and (min-width: 150px) and (max-width: 600px) {
+  section#ghostwriting {
+    background: none;
+  }
+}
+
+section#xml-tagging {
+  background: 0 140px url(../images/bg_bigsquare_xml.png) no-repeat;
+  padding-top: 20px;
+}
+
+@media only screen and (min-width: 150px) and (max-width: 600px) {
+  section#xml-tagging {
+    background: none;
+  }
+}
+
+section#aboutus {
+  background: 0 140px url(../images/bg_bigsquare_aboutus.png) no-repeat;
+}
+
+@media only screen and (min-width: 150px) and (max-width: 600px) {
+  section#aboutus {
+    background: none;
+  }
+}
+
+section#services {
+  background: 0 140px url(../images/bg_bigsquare_services.png) no-repeat;
+}
+
+@media only screen and (min-width: 150px) and (max-width: 600px) {
+  section#services {
+    background: none;
+  }
+}
+
+section#contact {
+  background: 0 140px url(../images/bg_bigsquare_contact.png) no-repeat;
+}
+
+@media only screen and (min-width: 150px) and (max-width: 600px) {
+  section#contact {
+    background: none;
+  }
+}
+
+section#blog {
+  background: 0 140px url(../images/bg_bigsquare_blog.png) no-repeat;
+}
+
+@media only screen and (min-width: 150px) and (max-width: 600px) {
+  section#blog {
+    background: none;
+  }
+}
+
+.separator {
+  position: relative;
+  display: block;
+  background-color: #333333;
+  font-size: 2em;
+  font-family: "exobold", Arial;
+  height: 40px;
+  color: #666666;
+  /* FIX GREY 'GHOST' LINE IN IOS */
+  margin-top: -1px;
+  padding-top: 1px;
+}
+
+@media only screen and (min-width: 150px) and (max-width: 600px) {
+  .separator {
+    display: none;
+  }
+}
+
+.separator a {
+  color: #666666;
+  text-decoration: none;
+}
+
+.separator .left {
+  float: left;
+  display: none;
+  line-height: 40px;
+}
+
+.separator .left:after {
+  content: url(../images/separator_arrow_down.png);
+  position: relative;
+  height: 11px;
+  width: 21px;
+  bottom: -22px;
+  right: 50%;
+}
+
+.separator .right {
+  float: right;
+  line-height: 40px;
+}
+
+.separator .right:before {
+  content: url(../images/separator_arrow_up.png);
+  position: relative;
+  height: 11px;
+  width: 21px;
+  top: -26px;
+  left: 50%;
+}
+
+.separator .social-icons {
+  float: right;
+}
+
+.separator .social-icons ul {
+  list-style-type: none;
+  margin: 0 0 !important;
+}
+
+.separator .social-icons ul li {
+  display: inline-block;
+  margin-left: 3px;
+}
+
+.separator .social-icons ul li a {
+  display: block;
+  height: 21px;
+  width: 22px;
+  margin-top: 10px;
+  text-indent: -9999px;
+  background: url(../images/icons-social-networking.png);
+  opacity: .25;
+  -webkit-transition-property: all;
+  -moz-transition-property: all;
+  -o-transition-property: all;
+  transition-property: all;
+  -webkit-transition-duration: 0.15s;
+  -moz-transition-duration: 0.15s;
+  -o-transition-duration: 0.15s;
+  transition-duration: 0.15s;
+}
+
+.separator .social-icons ul li a.google-plus {
+  background-position: 0px 0px;
+}
+
+.separator .social-icons ul li a.facebook {
+  background-position: -25px 0px;
+}
+
+.separator .social-icons ul li a.twitter {
+  background-position: -50px 0px;
+}
+
+.separator .social-icons ul li a:hover {
+  opacity: 1;
+}
+
+/* BACKGROUND SECTIONS */
+.grey-bg {
+  min-height: 76%;
+  margin-top: -12px;
+  position: relative;
+  background: url(../images/bg_chalkboard.jpg);
+  background-size: cover;
+  -webkit-box-shadow: inset 0px -50px 100px rgba(0, 0, 0, 0.25);
+  -moz-box-shadow: inset 0px -50px 100px rgba(0, 0, 0, 0.25);
+  box-shadow: inset 0px -50px 100px rgba(0, 0, 0, 0.25);
+}
+
+@media only screen and (min-width: 150px) and (max-width: 600px) {
+  .grey-bg {
+    padding: 40px 10px 10px 10px;
+    height: auto;
+  }
+}
+
+.grey-bg.main {
+  background: url(../images/what-can-we-do-for-you.png) bottom center no-repeat, url(../images/bg_chalkboard.jpg);
+  background-size: auto, cover;
+  -webkit-box-shadow: inset 0px -50px 100px rgba(0, 0, 0, 0.25);
+  -moz-box-shadow: inset 0px -50px 100px rgba(0, 0, 0, 0.25);
+  box-shadow: inset 0px -50px 100px rgba(0, 0, 0, 0.25);
+}
+
+.blue-bg,
+.purple-bg,
+.orange-bg,
+.red-bg,
+.green-bg {
+  /* FIX GREY 'GHOST' LINE IN IOS */
+  margin-top: -1px;
+  padding-top: 1px;
+  background-image: -webkit-gradient(radial, 0% 100%, 0, 0% 100%, 50, color-stop(0%, rgba(255, 255, 255, 0.65)), color-stop(50%, rgba(255, 255, 255, 0)));
+  background-image: -webkit-radial-gradient(bottom left, rgba(255, 255, 255, 0.65) 0%, rgba(255, 255, 255, 0) 50%);
+  background-image: -moz-radial-gradient(bottom left, rgba(255, 255, 255, 0.65) 0%, rgba(255, 255, 255, 0) 50%);
+  background-image: -o-radial-gradient(bottom left, rgba(255, 255, 255, 0.65) 0%, rgba(255, 255, 255, 0) 50%);
+  background-image: radial-gradient(bottom left, rgba(255, 255, 255, 0.65) 0%, rgba(255, 255, 255, 0) 50%);
+  -webkit-box-shadow: inset 0px 10px 75px rgba(0, 0, 0, 0.45);
+  -moz-box-shadow: inset 0px 10px 75px rgba(0, 0, 0, 0.45);
+  box-shadow: inset 0px 10px 75px rgba(0, 0, 0, 0.45);
+}
+
+@media only screen and (min-width: 150px) and (max-width: 600px) {
+  .blue-bg,
+  .purple-bg,
+  .orange-bg,
+  .red-bg,
+  .green-bg {
+    padding: 20px;
+  }
+}
+
+.blue-bg {
+  background-color: #007fa4;
+  margin-top: -12px;
+}
+
+.purple-bg {
+  background-color: #975e8f;
+}
+
+.orange-bg {
+  background-color: #d98c01;
+}
+
+.red-bg {
+  background-color: #e03335;
+}
+
+.green-bg {
+  background-color: #73ab00;
+}
+
+#footer {
+  position: relative;
+  display: block;
+  height: 200px;
+  background: #333333 url(../images/logo_small_footer.png) no-repeat;
+  background-position: center 135px;
+  background-size: 40px auto;
+  font-family: "exobold", Arial;
+  font-size: 1.0em;
+  color: #666666;
+  padding-top: 171px;
+  margin-top: -2px;
+}
+
+#footer a {
+  margin-left: 25px;
+  color: #666666;
+  text-decoration: none;
+  -webkit-transition-property: all;
+  -moz-transition-property: all;
+  -o-transition-property: all;
+  transition-property: all;
+  -webkit-transition-duration: 0.15s;
+  -moz-transition-duration: 0.15s;
+  -o-transition-duration: 0.15s;
+  transition-duration: 0.15s;
+}
+
+#footer a:hover, #footer a.active {
+  color: #aaaaaa;
+}
+
+#footer .left {
+  float: left;
+}
+
+#footer .left a {
+  margin-left: 0px;
+}
+
+#footer .right {
+  float: right;
+}
+
+@font-face {
+  font-family: 'ostrich_sans_roundedmedium';
+  src: url('../fonts/ostrichsansrounded-medium-webfont.woff2') format('woff2'),
+  url('../fonts/ostrichsansrounded-medium-webfont.woff') format('woff');
+  font-weight: normal;
+  font-style: normal;
+}
+
+@font-face {
+  font-family: 'texgyrepagellaregular';
+  src: url('../fonts/texgyrepagella-regular-webfont.woff2') format('woff2'),
+  url('../fonts/texgyrepagella-regular-webfont.woff') format('woff');
+  font-weight: normal;
+  font-style: normal;
+}
+
+@font-face {
+  font-family: 'exobold';
+  src: url('../fonts/exo-bold-webfont.woff2') format('woff2'),
+  url('../fonts/exo-bold-webfont.woff') format('woff');
+  font-weight: normal;
+  font-style: normal;
+}
+
+.error {
+  font-size: 2em;
+}
