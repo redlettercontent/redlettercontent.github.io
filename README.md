@@ -1,2 +1,1 @@
-# redlettercontent.github.io
-https://www.redlettercontent.com
+Source code for https://www.redlettercontent.com
