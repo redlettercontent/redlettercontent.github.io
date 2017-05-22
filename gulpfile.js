@@ -7,8 +7,9 @@ const glob = require('glob');
 const gulp = require('gulp');
 const htmlmin = require('gulp-htmlmin');
 const sequence = require('run-sequence');
-const serve = require('serve');
+const spawn = require('child_process').spawn;
 const uglify = require('gulp-uglify');
+const workboxBuild = require('workbox-build');
 
 const SRC_DIR = 'src';
 const BUILD_DIR = 'build';
@@ -60,28 +61,46 @@ gulp.task('html:concat', async () => {
     })).pipe(gulp.dest(BUILD_DIR));
 });
 
-gulp.task('html:partials', async () => {
+gulp.task('html:partials', () => {
   return gulp.src(HTML_SOURCE)
     .pipe(htmlmin({collapseWhitespace: true}))
     .pipe(gulp.dest(`${BUILD_DIR}/partials`));
 });
 
+gulp.task('sw', () => {
+  return workboxBuild.injectManifest({
+    swSrc: `${SRC_DIR}/service-worker-template.js`,
+    swDest: `${BUILD_DIR}/service-worker.js`,
+    globDirectory: BUILD_DIR,
+    globPatterns: ['**'],
+  });
+});
+
+
 gulp.task('build', callback => {
   sequence(
     'clean',
     ['css', 'js', 'images', 'fonts', 'html:concat', 'html:partials'],
+    'sw',
     callback
   );
 });
 
 gulp.task('watch', ['build'], callback => {
-  gulp.watch(CSS_SRC, ['css']);
-  gulp.watch(JS_SRC, ['js']);
-  gulp.watch(IMAGES_SRC, ['images']);
-  gulp.watch(FONTS_SRC, ['fonts']);
-  gulp.watch(HTML_SOURCE, ['html:concat', 'html:partials']);
+  gulp.watch(CSS_SRC, ['css', 'sw']);
+  gulp.watch(JS_SRC, ['js', 'sw']);
+  gulp.watch(IMAGES_SRC, ['images', 'sw']);
+  gulp.watch(FONTS_SRC, ['fonts', 'sw']);
+  gulp.watch(HTML_SOURCE, ['html:concat', 'html:partials', 'sw']);
 });
 
 gulp.task('serve', callback => {
-  serve(BUILD_DIR);
+  // The server is on http://localhost:5000
+  spawn('node_modules/.bin/firebase', ['serve'], {stdio: 'inherit'})
+    .on('exit', callback);
+});
+
+gulp.task('deploy', ['build'], callback => {
+  spawn('node_modules/.bin/firebase', ['deploy'], {stdio: 'inherit'})
+    .on('exit', callback);
 });
