@@ -67,9 +67,10 @@ gulp.task('html:partials', () => {
     .pipe(gulp.dest(`${BUILD_DIR}/partials`));
 });
 
+const SW_SRC = `${SRC_DIR}/service-worker-template.js`;
 gulp.task('sw', () => {
   return workboxBuild.injectManifest({
-    swSrc: `${SRC_DIR}/service-worker-template.js`,
+    swSrc: SW_SRC,
     swDest: `${BUILD_DIR}/service-worker.js`,
     globDirectory: BUILD_DIR,
     globPatterns: ['**'],
@@ -92,6 +93,7 @@ gulp.task('watch', ['build'], callback => {
   gulp.watch(IMAGES_SRC, ['images', 'sw']);
   gulp.watch(FONTS_SRC, ['fonts', 'sw']);
   gulp.watch(HTML_SOURCE, ['html:concat', 'html:partials', 'sw']);
+  gulp.watch(SW_SRC, ['sw']);
 });
 
 gulp.task('serve', callback => {
